@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
+import { useQuestions } from "../QuestionsContext";
 
 StartScreen.propTypes = {
   questionsLength: PropTypes.number,
   dispatch: PropTypes.func,
 };
 
-function StartScreen({ questionsLength, dispatch }) {
+function StartScreen() {
+  const { questionsLength, dispatch } = useQuestions();
   function handleClick() {
     dispatch({ type: "start" });
   }

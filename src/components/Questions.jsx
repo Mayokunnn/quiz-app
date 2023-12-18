@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 // import Option from "./Option";
 import Options from "./Options";
+import { useQuestions } from "../QuestionsContext";
 
 Questions.propTypes = {
   question: PropTypes.object,
@@ -8,7 +9,10 @@ Questions.propTypes = {
   answer: PropTypes.number,
 };
 
-function Questions({ question, dispatch, answer }) {
+function Questions() {
+  const { questions, dispatch, answer, index } = useQuestions();
+
+  const question = questions[index];
   return (
     <div>
       <h4>{question.question} </h4>

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useQuestions } from "../QuestionsContext";
 
 Progress.propTypes = {
   questions: PropTypes.array,
@@ -8,7 +9,9 @@ Progress.propTypes = {
   maxPossiblePoints: PropTypes.number,
 };
 
-function Progress({ questions, index, points, answer, maxPossiblePoints }) {
+function Progress() {
+  const { questions, index, points, answer, maxPossiblePoints } =
+    useQuestions();
   const numQuestions = questions.length;
   return (
     <header className="progress">

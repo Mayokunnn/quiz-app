@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useQuestions } from "../QuestionsContext";
 
 NextButton.propTypes = {
   dispatch: PropTypes.func,
@@ -7,7 +8,8 @@ NextButton.propTypes = {
   numQuestions: PropTypes.number,
 };
 
-function NextButton({ dispatch, answer, index, numQuestions }) {
+function NextButton() {
+  const { dispatch, answer, index, numQuestions } = useQuestions();
   if (answer === null) return null;
   if (index < numQuestions - 1)
     return (

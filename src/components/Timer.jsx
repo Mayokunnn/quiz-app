@@ -1,7 +1,9 @@
 import { useEffect } from "react";
+import { useQuestions } from "../QuestionsContext";
 
 // eslint-disable-next-line react/prop-types
-function Timer({ dispatch, secondsRemaining }) {
+function Timer() {
+  const { dispatch, secondsRemaining } = useQuestions();
   const mins = Math.floor(secondsRemaining / 60);
   const seconds = Math.floor(secondsRemaining % 60);
 

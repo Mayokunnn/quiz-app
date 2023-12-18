@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useQuestions } from "../QuestionsContext";
 
 FinishScreen.propTypes = {
   maxPossiblePoints: PropTypes.number,
@@ -7,7 +8,8 @@ FinishScreen.propTypes = {
   dispatch: PropTypes.func,
 };
 
-function FinishScreen({ points, maxPossiblePoints, highscore, dispatch }) {
+function FinishScreen() {
+  const { points, maxPossiblePoints, highscore, dispatch } = useQuestions();
   const percentage = Math.ceil((points / maxPossiblePoints) * 100);
 
   let emoji;
