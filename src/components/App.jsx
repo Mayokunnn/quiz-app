@@ -1,5 +1,3 @@
-// import PropTypes from "prop-types";
-// import DateCou, nter from "./DateCounter";
 import Error from "./Error";
 import Header from "./Header";
 import Main from "./Main";
